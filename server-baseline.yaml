@@ -1,0 +1,6 @@
+---
+#Playbook to install VIM Editor
+- hosts: all
+  tasks:
+    - name: Install Vim
+      apt: name=vim state=present
