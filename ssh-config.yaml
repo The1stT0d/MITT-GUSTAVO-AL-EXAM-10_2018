@@ -1,0 +1,7 @@
+---
+- hosts: all
+  tasks:
+  - user: name=sshguy="My User" group=sshusers
+
+  - name: Placing key
+    authorized_key: user=sshguy key="{{ lookup('file', './files/authorized_keys.myuser.pub') }}"
